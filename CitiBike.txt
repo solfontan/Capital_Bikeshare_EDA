@@ -117,3 +117,61 @@ preciso.
 En resumen, el formato ISO 8601 es una norma internacional que se utiliza
 para representar fechas y horas de manera estandarizada y clara, lo que lo hace esencial en 
 diversos contextos para garantizar la consistencia y precisión en la notación temporal.
+
+
+Hipótesis:
+
+**Título del Proyecto:**  
+Influencia de la Estación del Año en los Patrones de Uso de Bicicletas: 
+Un Análisis Exploratorio de Datos
+
+**Introducción:**  
+El uso de bicicletas como medio de transporte urbano ha experimentado
+un crecimiento significativo en muchas ciudades en los últimos años. 
+Este proyecto se propone analizar si la estación del año ejerce una influencia 
+significativa en los patrones de uso de bicicletas en una ubicación geográfica específica.
+
+**Hipótesis:**  
+La hipótesis principal de este proyecto es que la estación del año tiene un 
+impacto en la cantidad y la duración de los viajes en bicicleta. Específicamente, 
+se espera que el uso de bicicletas varíe de manera estacional, con picos durante las 
+estaciones más cálidas y una disminución en las estaciones más frías.
+
+**Objetivos:**  
+Los objetivos de este proyecto son los siguientes:
+
+1. Realizar un análisis exploratorio de datos para evaluar las tendencias 
+estacionales en el uso de bicicletas.
+2. Identificar patrones de comportamiento de los usuarios de bicicletas en relación 
+con la estación del año.
+3. Determinar si existen diferencias significativas en la cantidad y duración de los 
+viajes en bicicleta entre las estaciones del año.
+4. Proporcionar una base de datos sólida que permita la toma de decisiones informadas 
+para el desarrollo de políticas de movilidad urbana.
+
+**Métodos y Datos:**  
+Para llevar a cabo este proyecto, se utilizarán datos recopilados de un sistema 
+de alquiler de bicicletas (por ejemplo, una empresa de bicicletas compartidas) en la 
+ubicación geográfica de interés. Los datos incluirán información sobre la fecha y hora de 
+inicio y finalización de cada viaje, la ubicación de inicio y destino, y posiblemente datos 
+meteorológicos históricos para relacionarlos con las estaciones del año.
+
+Se utilizarán técnicas de análisis exploratorio de datos, estadísticas descriptivas y 
+visualizaciones para examinar y comparar los patrones de uso de bicicletas en diferentes 
+estaciones del año.
+
+**Resultados Esperados:**  
+Se espera que el análisis proporcione evidencia de la influencia estacional en el uso de 
+bicicletas, lo que podría ayudar a informar políticas de movilidad urbana, la gestión de flotas 
+de bicicletas compartidas y estrategias de promoción del ciclismo en la ciudad.
+
+**Conclusión:**  
+La conclusión del proyecto resumirá los hallazgos clave y si la hipótesis se acepta o rechaza. 
+Además, se destacarán las implicaciones de estos resultados para la planificación urbana y las 
+estrategias de movilidad.
+
+**Referencias:**  
+Se citarán todas las fuentes de datos y literatura relevante utilizadas en el proyecto.
+
+Este enfoque más formal ayudará a estructurar tu proyecto de EDA y comunicar claramente tus 
+objetivos e intenciones de investigación.
