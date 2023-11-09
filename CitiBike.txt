@@ -13,11 +13,41 @@ regardless of height, riding ability, or zodiac sign.
 Colores:
 Azul, Celeste, Rojo
 
+¿Cuáles son las 4 estaciones del año en Estados Unidos?
+- Primavera: del 20 de marzo al 21 de junio. 
+- Verano: del 21 de junio al 22 de septiembre. 
+- Otoño: del 22 de septiembre al 21 de diciembre. 
+- Invierno: del 21 de diciembre al 20 de marzo.
+
+Mapa:
+https://www.turismonuevayork.com/mapa-de-nueva-york/
+Hoboken es el 'medio' entre NYC y New Jersey
+
+Clima:
+- Las temperaturas en la ciudad de Nueva York varían a lo largo del año. 
+Aquí tienes un rango aproximado de temperaturas promedio para cada estación:
+
+- Primavera (marzo a mayo): Las temperaturas suelen oscilar entre 5°C a 18°C, 
+con un aumento gradual de la temperatura a medida que avanza la estación.
+
+- Verano (junio a agosto): Durante el verano, las temperaturas promedio suelen 
+estar en el rango de 21°C a 29°C. Pueden haber días más calurosos con temperaturas por encima 
+de los 30°C.
+
+- Otoño (septiembre a noviembre): En otoño, las temperaturas bajan gradualmente. 
+Las temperaturas promedio oscilan entre 13°C a 24°C. Esta es una época en la que 
+puedes disfrutar de los colores 
+otoñales de las hojas en los parques de la ciudad.
+
+- Invierno (diciembre a febrero): Los inviernos en Nueva York pueden ser fríos, con 
+temperaturas promedio entre -1°C y 7°C. Pueden haber días muy fríos con temperaturas bajo cero, 
+así como la posibilidad de nevadas.
+
+
 Preguntas:
 ¿Lugares de recogida con mayor popularidad en la ciudad?
 ¿Cómo varía la duración media entre los distintos grupos de edad?
 Según el grupo de edad ¿Quién alquila más?
-¿el promedio del viaje segun el grupo de edad?
 
 ¿El start station ID, cual vendría a aser su uso?
 
@@ -175,3 +205,28 @@ Se citarán todas las fuentes de datos y literatura relevante utilizadas en el p
 
 Este enfoque más formal ayudará a estructurar tu proyecto de EDA y comunicar claramente tus 
 objetivos e intenciones de investigación.
+
+Sí, generalmente es recomendable convertir las columnas que contienen fechas almacenadas 
+como tipo de dato 'object' en columnas de tipo de dato 'datetime' o 'date' cuando estás 
+trabajando con datos de fechas. Al hacerlo, obtendrás varios beneficios:
+
+1. Facilita el análisis de datos: Cuando las fechas se almacenan correctamente como objetos 
+de fecha y hora, puedes realizar fácilmente operaciones de filtrado, cálculo de diferencias 
+entre fechas, agrupación por fechas y otras operaciones de análisis de datos relacionadas con 
+fechas.
+
+2. Ahorro de memoria: Las fechas almacenadas como objetos de fecha y hora ocupan menos memoria 
+que las cadenas de texto, lo que puede ser importante cuando se trabaja con conjuntos de datos 
+grandes.
+
+3. Mayor eficiencia: Pandas y otras bibliotecas de Python ofrecen una amplia gama de funcionalidades
+para trabajar con objetos de fecha y hora. Al usar tipos de datos de fecha y hora, puedes aprovechar 
+estas funcionalidades de manera más eficiente.
+
+4. Evita errores: Al almacenar fechas como objetos de fecha y hora, te aseguras de que los datos se 
+manejen adecuadamente y evitas errores potenciales relacionados con la manipulación incorrecta de 
+cadenas de texto.
+
+Por lo tanto, en la mayoría de los casos, es recomendable convertir las columnas de fechas de 
+tipo de dato 'object' a tipos de dato 'datetime' o 'date' para aprovechar los beneficios mencionados
+anteriormente y facilitar el trabajo con datos de fechas en Python.
