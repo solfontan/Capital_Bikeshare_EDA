@@ -1,17 +1,52 @@
-CITI bIke info
+Antecedentes
+Los sistemas de uso compartido de bicicletas son una nueva 
+generación de alquileres de bicicletas tradicionales, donde todo el proceso, 
+desde la membresía hasta el alquiler y la devolución, se ha vuelto automático. 
+A través de estos sistemas, el usuario puede alquilar fácilmente una bicicleta desde 
+una posición específica y devolverla en otra posición. Actualmente, existen más de 500 
+programas de uso compartido de bicicletas en todo el mundo, que constan de más de 500 mil 
+bicicletas. Hoy en día, existe un gran interés en estos sistemas debido a su papel importante
+ en cuestiones de tráfico, medio ambiente y salud.
 
-priori: Expanding access to bikes, good experience, ecology, bike for business
+Además de las interesantes aplicaciones del mundo real de los sistemas de uso compartido 
+de bicicletas, las características de los datos generados por estos sistemas los hacen 
+atractivos para la investigación. A diferencia de otros servicios de transporte como autobuses
+o metro, la duración del viaje, la posición de salida y llegada se registran explícitamente 
+en estos sistemas. Esta característica convierte al sistema de uso compartido de bicicletas en 
+una red de sensores virtuales que se puede utilizar para detectar la movilidad en la ciudad. 
+Por lo tanto, se espera que la mayoría de los eventos importantes en la ciudad puedan detectarse 
+mediante el monitoreo de estos datos.
 
-25000 bicicletas en 1500 estaciones por
-Manhattan, Brooklyn, Queens, The Bronx, Jersey City, Hoboken.
+=========================================
+Conjunto de datos
+El proceso de alquiler de bicicletas está altamente correlacionado con la configuración 
+ambiental y estacional. Por ejemplo, las condiciones climáticas, la precipitación, el día de 
+la semana, la temporada, la hora del día, etc., pueden afectar los comportamientos de alquiler. 
+El conjunto de datos central está relacionado con el registro histórico de dos años correspondiente 
+a los años 2011 y 2012 del sistema Capital Bikeshare en Washington D.C., EE. UU., 
+que está disponible públicamente en http://capitalbikeshare.com/system-data. 
+Agregamos los datos de forma bimensual y diaria, y luego extraímos y agregamos la información 
+meteorológica y estacional correspondiente. La información meteorológica se extrae 
+de http://www.freemeteo.com.
 
-Classic rides
-Our classic bicycles were designed for easy riding in an urban environment.
- They were built to be comfortable for any type of rider, 
-regardless of height, riding ability, or zodiac sign.
+=========================================
+Tareas asociadas
+Regresión:
+Predicción del recuento de alquiler de bicicletas por hora o día en función de la 
+configuración ambiental y estacional.
 
-Colores:
-Azul, Celeste, Rojo
+Detección de eventos y anomalías:
+El recuento de bicicletas alquiladas también está correlacionado con algunos 
+eventos en la ciudad que se pueden rastrear fácilmente a través de motores de búsqueda. 
+Por ejemplo, una consulta como "2012-10-30 washington d.c." en Google devuelve resultados 
+relacionados con el huracán Sandy. Algunos de los eventos importantes se identifican en [1]. 
+Por lo tanto, los datos se pueden usar para validar algoritmos de detección de anomalías o eventos.
+
+=========================================
+Archivos
+Readme.txt
+hour.csv: recuentos de uso compartido de bicicletas agregados por hora. Registros: 17,379 horas
+day.csv: recuentos de uso compartido de bicicletas agregados por día. Registros: 731 días
 
 ¿Cuáles son las 4 estaciones del año en Estados Unidos?
 - Primavera: del 20 de marzo al 21 de junio. 
