@@ -1,0 +1,267 @@
+Antecedentes
+Los sistemas de uso compartido de bicicletas son una nueva 
+generación de alquileres de bicicletas tradicionales, donde todo el proceso, 
+desde la membresía hasta el alquiler y la devolución, se ha vuelto automático. 
+A través de estos sistemas, el usuario puede alquilar fácilmente una bicicleta desde 
+una posición específica y devolverla en otra posición. Actualmente, existen más de 500 
+programas de uso compartido de bicicletas en todo el mundo, que constan de más de 500 mil 
+bicicletas. Hoy en día, existe un gran interés en estos sistemas debido a su papel importante
+ en cuestiones de tráfico, medio ambiente y salud.
+
+Además de las interesantes aplicaciones del mundo real de los sistemas de uso compartido 
+de bicicletas, las características de los datos generados por estos sistemas los hacen 
+atractivos para la investigación. A diferencia de otros servicios de transporte como autobuses
+o metro, la duración del viaje, la posición de salida y llegada se registran explícitamente 
+en estos sistemas. Esta característica convierte al sistema de uso compartido de bicicletas en 
+una red de sensores virtuales que se puede utilizar para detectar la movilidad en la ciudad. 
+Por lo tanto, se espera que la mayoría de los eventos importantes en la ciudad puedan detectarse 
+mediante el monitoreo de estos datos.
+
+=========================================
+Conjunto de datos
+El proceso de alquiler de bicicletas está altamente correlacionado con la configuración 
+ambiental y estacional. Por ejemplo, las condiciones climáticas, la precipitación, el día de 
+la semana, la temporada, la hora del día, etc., pueden afectar los comportamientos de alquiler. 
+El conjunto de datos central está relacionado con el registro histórico de dos años correspondiente 
+a los años 2011 y 2012 del sistema Capital Bikeshare en Washington D.C., EE. UU., 
+que está disponible públicamente en http://capitalbikeshare.com/system-data. 
+Agregamos los datos de forma bimensual y diaria, y luego extraímos y agregamos la información 
+meteorológica y estacional correspondiente. La información meteorológica se extrae 
+de http://www.freemeteo.com.
+
+=========================================
+Tareas asociadas
+Regresión:
+Predicción del recuento de alquiler de bicicletas por hora o día en función de la 
+configuración ambiental y estacional.
+
+Detección de eventos y anomalías:
+El recuento de bicicletas alquiladas también está correlacionado con algunos 
+eventos en la ciudad que se pueden rastrear fácilmente a través de motores de búsqueda. 
+Por ejemplo, una consulta como "2012-10-30 washington d.c." en Google devuelve resultados 
+relacionados con el huracán Sandy. Algunos de los eventos importantes se identifican en [1]. 
+Por lo tanto, los datos se pueden usar para validar algoritmos de detección de anomalías o eventos.
+
+=========================================
+Archivos
+Readme.txt
+hour.csv: recuentos de uso compartido de bicicletas agregados por hora. Registros: 17,379 horas
+day.csv: recuentos de uso compartido de bicicletas agregados por día. Registros: 731 días
+
+¿Cuáles son las 4 estaciones del año en Estados Unidos?
+- Primavera: del 20 de marzo al 21 de junio. 
+- Verano: del 21 de junio al 22 de septiembre. 
+- Otoño: del 22 de septiembre al 21 de diciembre. 
+- Invierno: del 21 de diciembre al 20 de marzo.
+
+Mapa:
+https://www.turismonuevayork.com/mapa-de-nueva-york/
+Hoboken es el 'medio' entre NYC y New Jersey
+
+Clima:
+- Las temperaturas en la ciudad de Nueva York varían a lo largo del año. 
+Aquí tienes un rango aproximado de temperaturas promedio para cada estación:
+
+- Primavera (marzo a mayo): Las temperaturas suelen oscilar entre 5°C a 18°C, 
+con un aumento gradual de la temperatura a medida que avanza la estación.
+
+- Verano (junio a agosto): Durante el verano, las temperaturas promedio suelen 
+estar en el rango de 21°C a 29°C. Pueden haber días más calurosos con temperaturas por encima 
+de los 30°C.
+
+- Otoño (septiembre a noviembre): En otoño, las temperaturas bajan gradualmente. 
+Las temperaturas promedio oscilan entre 13°C a 24°C. Esta es una época en la que 
+puedes disfrutar de los colores 
+otoñales de las hojas en los parques de la ciudad.
+
+- Invierno (diciembre a febrero): Los inviernos en Nueva York pueden ser fríos, con 
+temperaturas promedio entre -1°C y 7°C. Pueden haber días muy fríos con temperaturas bajo cero, 
+así como la posibilidad de nevadas.
+
+
+Preguntas:
+¿Lugares de recogida con mayor popularidad en la ciudad?
+¿Cómo varía la duración media entre los distintos grupos de edad?
+Según el grupo de edad ¿Quién alquila más?
+
+¿El start station ID, cual vendría a aser su uso?
+
+¿Varían los viajes según la estación del año?
+- Analizo 4 meses o todo el año. De esos cuatro meses pensaba como 'mediana' de ello.
+- Clima de NYC para armar hipótesis.
+- ¿Con solo un año para la estación me es suficiente?
+- Si agrego los años 2019-2022 ¿ Podría analizar un año normal y otro como 'lo minimo de viajes 
+que podrían pasar por 'pandemia'?
+- ¿Serviría expandir un rango más las CitiBike? ¿O no se expanden por el turismo de dicha zona?
+- Más allá de la gente local, sus estaciones están basadas en ¿Sálidas del metro,estatuas
+restaurants conocidos, es decir turismo?
+- ¿Con qué datos puedo sacar otros, por ejemplo puedo, según la duración del viaje, calcular su edad?
+o necesito varios datos más, o no es posible.
+- Los colores son esos por?
+- Funciona el número de llamada por si hay un problemas, habiendo tanto volumen de gente.
+- ¿Dónde hay más estaciones de biciletas? y ¿Por qué?
+
+Para que me sirve la latitud y longitud:
+
+La latitud y longitud de un lugar, teniendo su nombre en otra columna, 
+son datos geoespaciales que pueden ser de gran utilidad en un análisis exploratorio de datos, 
+especialmente si estás trabajando con conjuntos de datos que contienen información geográfica.
+ Aquí hay algunas razones por las que estos datos pueden ser valiosos:
+
+1. Visualización geoespacial: Las coordenadas de latitud y longitud te permiten crear visualizaciones
+geoespaciales, como mapas, que pueden ayudarte a comprender la distribución geográfica de tus datos.
+Esto puede ser útil para identificar patrones geográficos o tendencias.
+
+2. Análisis de proximidad: Puedes calcular la distancia entre diferentes lugares utilizando las
+coordenadas de latitud y longitud. Esto es útil para analizar la proximidad geográfica entre puntos 
+de interés o eventos, lo que puede ser relevante en estudios de logística, epidemiología,
+planificación urbana y más.
+
+3. Segmentación geográfica: Puedes utilizar la información de latitud y longitud para segmentar
+tus datos en regiones geográficas específicas. Esto es valioso cuando deseas analizar datos en
+función de la ubicación geográfica, como la división en regiones, ciudades o áreas específicas.
+
+4. Análisis de calor: Puedes crear mapas de calor que resalten áreas geográficas con valores
+específicos o patrones de interés. Esto es útil para visualizar la concentración de
+datos en diferentes ubicaciones geográficas.
+
+5. Identificación de ubicaciones: Las coordenadas de latitud y
+longitud pueden ayudarte a identificar con precisión la ubicación de un lugar, 
+lo que puede ser útil para geocodificar direcciones o para buscar información 
+adicional sobre esos lugares en fuentes externas.
+
+6. Análisis espacial: Si deseas realizar análisis espaciales más avanzados, 
+como la detección de patrones espaciales, interpolación espacial o análisis de clusters, 
+las coordenadas de latitud y longitud son esenciales.
+
+En resumen, la latitud y longitud en un análisis exploratorio de datos son datos 
+geoespaciales valiosos que pueden ayudarte a comprender mejor la distribución geográfica 
+de tus datos y a realizar análisis específicos relacionados con la ubicación. 
+Estos datos pueden proporcionar información adicional y enriquecer tu análisis,
+ permitiéndote obtener perspectivas geoespaciales más profundas de tus datos.
+
+Tienes razón, si solo tienes el nombre del lugar en una columna, no podrás mostrarlo 
+directamente en una visualización de mapa. Para visualizar ubicaciones geográficas en un mapa,
+necesitas las coordenadas de latitud y longitud.
+
+
+
+
+NQV:
+El formato ISO 8601 es una norma internacional que establece la representación de fechas y horas de forma unificada. Se utiliza para garantizar la consistencia en la notación de fechas y horas en todo el mundo. 
+Las principales características del formato ISO 8601 son:
+
+1. Fecha: Se representa en el formato "AAAA-MM-DD", donde "AAAA" es el año con cuatro dígitos
+, "MM" es el mes con dos dígitos y "DD" es el día con dos dígitos. Por ejemplo, "2023-11-04" 
+representa el 4 de noviembre de 2023.
+
+2. Fecha y hora: Además de la fecha, también se puede incluir la hora y la zona horaria.
+La notación completa es "AAAA-MM-DDTHH:MM:SSZ", donde "T" separa la fecha y la hora, "HH" 
+es la hora en formato 24 horas, "MM" es el minuto y "SS" es el segundo. "Z" indica que la hora 
+está en UTC (Tiempo Universal Coordinado).
+
+ISO 8601 se usa ampliamente en todo el mundo en una variedad de campos, como la informática,
+la industria, la ciencia y la administración. Su adopción se debe a varias razones:
+
+1. Claridad y unificación: ISO 8601 proporciona un formato claro y uniforme para la
+representación de fechas y horas, evitando confusiones debidas a las diferencias en la notación 
+entre países.
+
+2. Orden natural: La notación "AAAA-MM-DD" sigue un orden lógico, 
+de la unidad de tiempo más grande (año) a la más pequeña (día), lo que facilita la ordenación y
+comparación de fechas.
+
+3. Compatibilidad informática: El formato ISO 8601 es ampliamente utilizado en sistemas
+informáticos y bases de datos, lo que facilita el intercambio de datos entre diferentes aplicaciones
+y plataformas.
+
+4. Precisión: La inclusión de la hora y la zona horaria permite una representación precisa 
+de eventos en todo el mundo y es esencial en aplicaciones que requieren un registro temporal 
+preciso.
+
+En resumen, el formato ISO 8601 es una norma internacional que se utiliza
+para representar fechas y horas de manera estandarizada y clara, lo que lo hace esencial en 
+diversos contextos para garantizar la consistencia y precisión en la notación temporal.
+
+
+Hipótesis:
+
+**Título del Proyecto:**  
+Influencia de la Estación del Año en los Patrones de Uso de Bicicletas: 
+Un Análisis Exploratorio de Datos
+
+**Introducción:**  
+El uso de bicicletas como medio de transporte urbano ha experimentado
+un crecimiento significativo en muchas ciudades en los últimos años. 
+Este proyecto se propone analizar si la estación del año ejerce una influencia 
+significativa en los patrones de uso de bicicletas en una ubicación geográfica específica.
+
+**Hipótesis:**  
+La hipótesis principal de este proyecto es que la estación del año tiene un 
+impacto en la cantidad y la duración de los viajes en bicicleta. Específicamente, 
+se espera que el uso de bicicletas varíe de manera estacional, con picos durante las 
+estaciones más cálidas y una disminución en las estaciones más frías.
+
+**Objetivos:**  
+Los objetivos de este proyecto son los siguientes:
+
+1. Realizar un análisis exploratorio de datos para evaluar las tendencias 
+estacionales en el uso de bicicletas.
+2. Identificar patrones de comportamiento de los usuarios de bicicletas en relación 
+con la estación del año.
+3. Determinar si existen diferencias significativas en la cantidad y duración de los 
+viajes en bicicleta entre las estaciones del año.
+4. Proporcionar una base de datos sólida que permita la toma de decisiones informadas 
+para el desarrollo de políticas de movilidad urbana.
+
+**Métodos y Datos:**  
+Para llevar a cabo este proyecto, se utilizarán datos recopilados de un sistema 
+de alquiler de bicicletas (por ejemplo, una empresa de bicicletas compartidas) en la 
+ubicación geográfica de interés. Los datos incluirán información sobre la fecha y hora de 
+inicio y finalización de cada viaje, la ubicación de inicio y destino, y posiblemente datos 
+meteorológicos históricos para relacionarlos con las estaciones del año.
+
+Se utilizarán técnicas de análisis exploratorio de datos, estadísticas descriptivas y 
+visualizaciones para examinar y comparar los patrones de uso de bicicletas en diferentes 
+estaciones del año.
+
+**Resultados Esperados:**  
+Se espera que el análisis proporcione evidencia de la influencia estacional en el uso de 
+bicicletas, lo que podría ayudar a informar políticas de movilidad urbana, la gestión de flotas 
+de bicicletas compartidas y estrategias de promoción del ciclismo en la ciudad.
+
+**Conclusión:**  
+La conclusión del proyecto resumirá los hallazgos clave y si la hipótesis se acepta o rechaza. 
+Además, se destacarán las implicaciones de estos resultados para la planificación urbana y las 
+estrategias de movilidad.
+
+**Referencias:**  
+Se citarán todas las fuentes de datos y literatura relevante utilizadas en el proyecto.
+
+Este enfoque más formal ayudará a estructurar tu proyecto de EDA y comunicar claramente tus 
+objetivos e intenciones de investigación.
+
+Sí, generalmente es recomendable convertir las columnas que contienen fechas almacenadas 
+como tipo de dato 'object' en columnas de tipo de dato 'datetime' o 'date' cuando estás 
+trabajando con datos de fechas. Al hacerlo, obtendrás varios beneficios:
+
+1. Facilita el análisis de datos: Cuando las fechas se almacenan correctamente como objetos 
+de fecha y hora, puedes realizar fácilmente operaciones de filtrado, cálculo de diferencias 
+entre fechas, agrupación por fechas y otras operaciones de análisis de datos relacionadas con 
+fechas.
+
+2. Ahorro de memoria: Las fechas almacenadas como objetos de fecha y hora ocupan menos memoria 
+que las cadenas de texto, lo que puede ser importante cuando se trabaja con conjuntos de datos 
+grandes.
+
+3. Mayor eficiencia: Pandas y otras bibliotecas de Python ofrecen una amplia gama de funcionalidades
+para trabajar con objetos de fecha y hora. Al usar tipos de datos de fecha y hora, puedes aprovechar 
+estas funcionalidades de manera más eficiente.
+
+4. Evita errores: Al almacenar fechas como objetos de fecha y hora, te aseguras de que los datos se 
+manejen adecuadamente y evitas errores potenciales relacionados con la manipulación incorrecta de 
+cadenas de texto.
+
+Por lo tanto, en la mayoría de los casos, es recomendable convertir las columnas de fechas de 
+tipo de dato 'object' a tipos de dato 'datetime' o 'date' para aprovechar los beneficios mencionados
+anteriormente y facilitar el trabajo con datos de fechas en Python.
