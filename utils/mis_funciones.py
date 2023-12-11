@@ -2,25 +2,31 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy.stats import kurtosis, skew
 
-def grafico_univariante(df : pd.DataFrame, columna):
-    """ Psamos un Dataframe con su columna, para que nos retorne dos gráficos.
+
+def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='lightblue', color_hist='lightblue'):
+    """ Pasamos un DataFrame con su columna, para que nos retorne dos gráficos.
     - El primero será de tipo boxplot con medidas estadísticas : mediana - std.
-    - El segundo será un histograma para ver como es la distribución de los datos.
-    
+    - El segundo será un histograma para ver cómo es la distribución de los datos.
+
     Args:
-        df (DataFrame): typo dataframe
-        columna (_type_): 
-        
+        df (DataFrame): DataFrame
+        columna (_type_): Nombre de la columna
+        color_boxplot (str): Color para el boxplot (por defecto: lightblue)
+        color_hist (str): Color para el histograma (por defecto: lightblue)
     """
+
     fig, ax = plt.subplots(figsize=(8, 8))
 
     # Agregar el gráfico de caja (boxplot) arriba
-    sns.boxplot(df[columna], ax=ax, showfliers=False, vert=False)
+    sns.boxplot(df[columna], ax=ax, showfliers=False, vert=False, color=color_boxplot)
 
     media = np.mean(df[columna])
     median_val = np.median(df[columna])
     std_val = np.std(df[columna])
+    kurtosis_valor = kurtosis(df[columna])
+    simetria_valor = skew(df[columna])
 
     ax.axvline(median_val, color='red', linestyle='dashdot', linewidth=2, label=f'Median: {median_val:.2f}')
     ax.axvline(media + std_val, color='black', linestyle='dashdot', linewidth=2, label=f'std: {std_val:.2f}')
@@ -35,7 +41,7 @@ def grafico_univariante(df : pd.DataFrame, columna):
 
     # Agregar el gráfico de histograma en el centro
     ax_hist = fig.add_axes([0.1, 0.45, 0.8, 0.4], sharex=ax)
-    sns.histplot(df[columna], kde=False, ax=ax_hist)
+    sns.histplot(df[columna], kde=False, ax=ax_hist, color=color_hist)
 
     # Eliminar los ticks del eje x del gráfico de histograma
     ax_hist.set_xticks([])
@@ -48,8 +54,25 @@ def grafico_univariante(df : pd.DataFrame, columna):
 
     ax_hist.set_ylabel('Frequency');
     
+    print(f"kurtosis: {kurtosis_valor:.2f}")
+    print(f"simetria: {simetria_valor:.2f}")
+
+    if kurtosis_valor > 3:
+        print("La distribución es leptocúrtica, lo que sugiere colas pesadas y picos agudos.")
+    elif kurtosis_valor < 3:
+        print("La distribución es platicúrtica, lo que sugiere colas ligeras y un pico achatado.")
+    else:
+        print("La distribución es mesocúrtica, similar a una distribución normal.")
+
+    if simetria_valor > 0:
+        print("La distribución es asimétrica positiva (sesgo hacia la derecha).")
+    elif simetria_valor < 0:
+        print("La distribución es asimétrica negativa (sesgo hacia la izquierda).")
+    else:
+        print("La distribución es perfectamente simétrica alrededor de su media.")
     
-def grafico_bivariante(df : pd.DataFrame, x : str, y: str, type : str, title=None) -> sns.jointplot:
+    
+def grafico_bivariante(df : pd.DataFrame, x : str, y: str, forma : str, color_jointplot='skyblue', title=None) -> sns.jointplot:
     """ Grafico bivariante con el fin de retornar un jointplot entre variables para un análisis más práctico
     arg:
     df : DataFrame
@@ -64,10 +87,10 @@ def grafico_bivariante(df : pd.DataFrame, x : str, y: str, type : str, title=Non
     import seaborn as sns
     
     form = ['scatter' , 'kde' , 'hist' , 'hex' , 'reg' , 'resid']
-    if type in form:
-        plot = sns.jointplot(data = df, x = x, y = y, kind=type, marginal_ticks=True)
-        plot.fig.suptitle(title, y=1.02)
-        plt.show()
+    if forma in form:
+        plot = sns.jointplot(data = df, x = x, y = y, kind=forma, marginal_ticks=True, color=color_jointplot)
+        plot.fig.suptitle(title, y=1.05)
+
         return plot
     else:
         print("Error en el tipo de gráfica")
