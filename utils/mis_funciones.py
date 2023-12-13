@@ -5,7 +5,7 @@ import seaborn as sns
 from scipy.stats import kurtosis, skew
 
 
-def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='lightblue', color_hist='lightblue'):
+def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='#b81414', color_hist='#b81414'):
     """ Pasamos un DataFrame con su columna, para que nos retorne dos gráficos.
     - El primero será de tipo boxplot con medidas estadísticas : mediana - std.
     - El segundo será un histograma para ver cómo es la distribución de los datos.
@@ -28,25 +28,21 @@ def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='lightbl
     kurtosis_valor = kurtosis(df[columna])
     simetria_valor = skew(df[columna])
 
-    ax.axvline(median_val, color='red', linestyle='dashdot', linewidth=2, label=f'Median: {median_val:.2f}')
+    ax.axvline(median_val, color='white', linestyle='dashdot', linewidth=2, label=f'Median: {median_val:.2f}')
     ax.axvline(media + std_val, color='black', linestyle='dashdot', linewidth=2, label=f'std: {std_val:.2f}')
     ax.axvline(media - std_val, color='black', linestyle='dashdot', linewidth=2, label=f'std: {std_val:.2f}')
 
     leg = ax.legend()
     leg.set_bbox_to_anchor((1, 0.05)) 
 
-    # Eliminar los ticks del eje y del gráfico de caja
+    # # Eliminar los ticks del eje y del gráfico de caja
     ax.set_yticklabels([])
     ax.set_yticks([])
 
     # Agregar el gráfico de histograma en el centro
-    ax_hist = fig.add_axes([0.1, 0.45, 0.8, 0.4], sharex=ax)
+    ax_hist = fig.add_axes([0.1, 0.45, 0.8, 0.4])
     sns.histplot(df[columna], kde=False, ax=ax_hist, color=color_hist)
-
-    # Eliminar los ticks del eje x del gráfico de histograma
-    ax_hist.set_xticks([])
-    ax_hist.set_xticklabels([])
-
+    
     # Ajustar la posición del gráfico de caja
     pos = ax.get_position()
     pos.y0 = 1.02
@@ -72,7 +68,7 @@ def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='lightbl
         print("La distribución es perfectamente simétrica alrededor de su media.")
     
     
-def grafico_bivariante(df : pd.DataFrame, x : str, y: str, forma : str, color_jointplot='skyblue', title=None) -> sns.jointplot:
+def grafico_bivariante(df : pd.DataFrame, x : str, y: str, forma : str, color_jointplot='#b81414', title=None) -> sns.jointplot:
     """ Grafico bivariante con el fin de retornar un jointplot entre variables para un análisis más práctico
     arg:
     df : DataFrame
