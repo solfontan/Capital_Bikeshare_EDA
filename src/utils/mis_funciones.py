@@ -28,7 +28,6 @@ def grafico_univariante(df : pd.DataFrame, columna : str, color_boxplot='#b81414
     kurtosis_valor = kurtosis(df[columna])
     simetria_valor = skew(df[columna])
 
-    ax.axvline(median_val, color='yellow', linestyle='dashdot', linewidth=2, label=f'Median: {median_val:.2f}')
     ax.axvline(media + std_val, color='black', linestyle='dashdot', linewidth=2, label=f'std: {std_val:.2f}')
     ax.axvline(media - std_val, color='black', linestyle='dashdot', linewidth=2, label=f'std: {std_val:.2f}')
 
