@@ -5,6 +5,7 @@ Sumérgete en nuestro repositorio de análisis de datos para desentrañar los se
 
 ## Estructura del Proyecto
 - **notebooks** : Explora los Jupyter Notebooks de exploración y limpieza.
+- **doc** : Archivo de guía para los notebooks.
 - **data** : Descubre nuestras bases de datos en diferentes etapas:
 1. Raw : Datos crudos tal como llegaron.
 2. Process : Datos procesados para el período 2011 y 2012.
@@ -17,18 +18,6 @@ Sumérgete en nuestro repositorio de análisis de datos para desentrañar los se
 - Python 3.09 o superior.
 - Jupyter Notebook para una experiencia interactiva.
 - Bibliotecas de Python, entre las que destacan: pandas, matplotlib, seaborn, plotly, scipy.stats y numpy.
-
-#### **Instrucciones de Uso** 🚀
-
-- Clona este repositorio:
-  
-bash - Copy code
-` git clone https://github.com/tu-usuario/CAPITAL_BIKESHARE_Analysis.git `
-
-- Instala las herramientas mágicas:
-
-bash - Copy code
-`pip install -r requirements.txt`
 
 ## Contenido de la base de datos: 
 
