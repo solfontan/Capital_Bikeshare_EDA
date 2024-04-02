@@ -1,7 +1,8 @@
-# Análisis de Datos del Sistema Compartido de Alquiler de Bicicletas - CAPITAL BIKESHARE Washington D.C. (2011)
+# Análisis de Datos del Sistema Compartido de Alquiler de Bicicletas 
+## CAPITAL BIKESHARE Washington D.C. (2011) 🚴‍♂️
 
 ## Objetivo
-Sumérgete en nuestro repositorio de análisis de datos para desentrañar los secretos detrás del sistema de alquiler de bicicletas en Washington D.C., enfocándonos en las estaciones del año. Buscamos revelar patrones de uso, preferencias estacionales y proporcionar información valiosa para mejorar la experiencia del usuario y generar un trabajo más óptimo.🚴‍♂️📊
+Sumérgete en nuestro repositorio de análisis de datos para desentrañar los secretos detrás del *sistema de alquiler de bicicletas en Washington D.C., enfocándonos en las estaciones del año*. Buscamos revelar patrones de uso, preferencias estacionales y proporcionar información valiosa para mejorar la experiencia del usuario y generar un trabajo más óptimo.🚴‍♂️📊
 
 ## Estructura del Proyecto
 - **notebooks** : Explora los Jupyter Notebooks de exploración y limpieza.
@@ -41,6 +42,6 @@ Sumérgete en nuestro repositorio de análisis de datos para desentrañar los se
 | 16     | **registered**| Conteo de usuarios registrados. Indica la cantidad de usuarios que están registrados en el sistema y alquilaron bicicletas.                                             |
 | 17     | **cnt**       | Conteo total de bicicletas alquiladas, incluyendo usuarios casuales y registrados. Representa el total de bicicletas alquiladas en un período determinado, incluyendo tanto a usuarios casuales como a usuarios registrados. |
 
-### ------------------------ ¡A pedalear juntos hacia el conocimiento! 🚴‍♀️🌐 ------------------------
+### ------------------------ ¡A pedalear juntos hacia el conocimiento! 🚴‍♀️🌐 ---------------------
 
 
